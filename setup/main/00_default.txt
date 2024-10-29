@@ -425,7 +425,6 @@
 				local_country_civilization_value = 15
 			}
 		}
-
         61 = { # Roma
             key = "treasure_palladium_of_troy"
             icon = "treasure_architecture"
@@ -2930,14 +2929,52 @@ diplomacy = {
 
 	#Seleucids
 	#Nominal Vassals that should stay as Tributaries:
-	dependency = { first = SEL second = TYO subject_type = tributary }
-	dependency = { first = SEL second = ADI subject_type = tributary }
-	dependency = { first = SEL second = BAC subject_type = satrapy }
-	dependency = { first = SEL second = PAR subject_type = satrapy }
-	dependency = { first = SEL second = ARS subject_type = satrapy }
-	dependency = { first = SEL second = GHA subject_type = client_state }
-	dependency = { first = SEL second = GED subject_type = satrapy }
-	dependency = { first = SEL second = PES subject_type = satrapy }
+	#dependency = { first = SEL second = TYO subject_type = tributary }
+	#dependency = { first = SEL second = ADI subject_type = tributary }
+	#dependency = { first = SEL second = BAC subject_type = satrapy }
+	#dependency = { first = SEL second = PAR subject_type = satrapy }
+	#dependency = { first = SEL second = ARS subject_type = satrapy }
+	#dependency = { first = SEL second = GHA subject_type = client_state }
+	#dependency = { first = SEL second = GED subject_type = satrapy }
+	#dependency = { first = SEL second = PES subject_type = satrapy }
+
+	# Assyrian Sphere
+
+	alliance = { first = ASS second = STC }
+	
+	dependency = { first = ASS second = ZGR subject_type = vassal_tribe }
+	dependency = { first = ASS second = BGR subject_type = vassal_tribe }
+	dependency = { first = ASS second = HLW subject_type = feudatory }
+
+	# Babylonian Sphere
+
+	dependency = { first = BBL second = KHL subject_type = vassal_tribe }
+	dependency = { first = BBL second = KAR subject_type = vassal_tribe }
+
+	# Chaldaeans
+
+	defensive_league = {
+		member = BAM
+		member = BSH
+		member = GMB
+		member = TRD
+	}
+
+	# Median Sphere
+
+	alliance = { first = MED second = ELM }
+
+	# Persian Sphere
+
+	dependency = { first = PES second = KRM subject_type = vassal_tribe }
+	dependency = { first = PES second = PTK subject_type = vassal_tribe }
+	dependency = { first = PES second = UTI subject_type = vassal_tribe }
+	dependency = { first = PES second = SKT subject_type = vassal_tribe }
+	dependency = { first = PES second = DEK subject_type = vassal_tribe }
+	dependency = { first = PES second = KHR subject_type = vassal_tribe }
+
+	alliance = { first = PES second = PAR }
+	dependency = { first = PAR second = HYR subject_type = tributary }
 
 	#Armenia
 	dependency = { first = ARM second = AR2 subject_type = satrapy }
@@ -2945,7 +2982,7 @@ diplomacy = {
 	dependency = { first = ARM second = CRD subject_type = vassal_tribe }
 
 	#Lysimachos and Cassander - Alliance
-	#alliance = { first = MAC second = TRE }
+	#
 
 	#Lysimachos and the Odrysia/West-Pontic Cities
 	dependency = { first = TRE second = ODR subject_type = vassal_tribe }
@@ -14328,7 +14365,7 @@ country = {
 		}
 
 		PKT = {
-			government = tribal_kingdom
+			government = tribal_chiefdom
 			primary_culture = pactyan
 			religion = zoroaster
 
@@ -14361,7 +14398,7 @@ country = {
 			capital = 6558 # Aria
 
 			own_control_core = 	{
-				6558 6518 6557 6559 6563 6564 6565 6567 6568 6596 6646 6647 7224 7225 # Aria
+				6558 6518 6557 6563 6564 6565 6567 6568 6596 6646 6647 7224 7225 # Aria
 			}
 		}
 
@@ -14402,46 +14439,6 @@ country = {
 			own_control_core = 	{
 				6512 6514 6580 6581 6582 6583 # Rudiana
 			}
-		}
-
-		SEL = {
-			family = 30
-			family = 70
-			government = aristocratic_monarchy
-			primary_culture = macedonian
-			religion = roman_pantheon
-			capital = 911
-			diplomatic_stance=warmongering_stance
-			monarchy_military_reforms = work_for_the_best
-
-			poptype_rights = {
-				{
-					culture = babylonian
-					type = citizen
-				}
-			}
-
-			technology={
-				military_tech={ level=2 progress=0 }
-				civic_tech={ level=2 progress=0 }
-				oratory_tech={ level=2 progress=0 }
-				religious_tech= { level=2 progress=0  }
-			}
-
-			own_control_core = 	{
-				6645 6621 6639 6640 6641 6609 6615 6624 6623 6612 #sattagydia
-				6643 6644 6642 6628 6631 6638 6614 6608 6611 6625 6626 #bamyan
-				4997 4998 4996 3434 7638 7639 #hyrcania
-			}
-
-			pantheon = {
-				{ deity = 758 }
-				{ deity = 755 }
-				{ deity = 103 }
-				{ deity = 114 }
-			}
-
-			treasures = { 102 }
 		}
 
 		ELM = {
@@ -14846,20 +14843,13 @@ country = {
 		}
 
 		ARS = {
-			government = despotic_monarchy
+			government = tribal_kingdom
 			primary_culture = pactyan
 			religion = zoroaster
 			diplomatic_stance=warmongering_stance
 			monarchy_citizen_law = foreign_law_for_minorities
 			capital = 6541 #Alexandria Arachosia
 			family = 100
-
-			poptype_rights = {
-				{
-					culture = pactyan
-					type = citizen
-				}
-			}
 
 			technology={
 				military_tech={ level=2 progress=0 }
@@ -14869,8 +14859,70 @@ country = {
 			}
 
 			own_control_core = 	{
-				6541 6555 6610 6554 6548 6573 6547 6632 6553 6572 6622 6633 #arachosia
-				6594 6595 #pactya
+				6541 6555 6610 6554 6548 6573 6547 6632 6553 6572 6633 #arachosia
+				6594 6595 # Pactya
+				6623 # Sattagydia
+			}
+		}
+
+		PMS = {
+			government = tribal_kingdom
+			primary_culture = sattagydian
+			religion = zoroaster
+
+			technology={
+				military_tech={ level=2 progress=0 }
+				civic_tech={ level=2 progress=0 }
+				oratory_tech={ level=2 progress=0 }
+				religious_tech= { level=2 progress=0  }
+			}
+
+			capital = 6638 # Paros
+
+			own_control_core = 	{
+				6638 6628 6631 6642 6643 6644 # Paropamisadae
+				6640 6621 6639 6645 # Sattagydia
+				6559 # Aria
+				6622 # Arachosia
+			}
+		}
+
+		STG = {
+			government = tribal_kingdom
+			primary_culture = sattagydian
+			religion = zoroaster
+
+			technology={
+				military_tech={ level=2 progress=0 }
+				civic_tech={ level=2 progress=0 }
+				oratory_tech={ level=2 progress=0 }
+				religious_tech= { level=2 progress=0  }
+			}
+
+			capital = 6615 # Gauzaca
+
+			own_control_core = 	{
+				6615 6609 6612 6624 # Sattagydia
+				4318 # Glausae
+			}
+		}
+
+		KBJ = {
+			government = tribal_federation
+			primary_culture = sattagydian
+			religion = zoroaster
+
+			technology={
+				military_tech={ level=2 progress=0 }
+				civic_tech={ level=2 progress=0 }
+				oratory_tech={ level=2 progress=0 }
+				religious_tech= { level=2 progress=0  }
+			}
+
+			capital = 6611 # Alexandria in the Caucasus
+
+			own_control_core = 	{
+				6611 6608 6614 6625 6626 6641
 			}
 		}
 
@@ -15371,7 +15423,7 @@ country = {
 		}
 
 		SKT = {
-			government = tribal_kingdom
+			government = tribal_chiefdom
 			primary_culture = scythian
 			religion = caucasian_religion
 
@@ -16546,7 +16598,7 @@ country = {
 				7329 7336 7358 7359 7393 7397 #vanga_region
 				7322 7650 #kamata_region
 				4405 4421 4422 4423 4452 #kuru_region
-				4308 4317 4318 4320 4322 4326 4327 4328 4329 7314 7492 #taxila_region
+				4308 4317 4320 4322 4326 4327 4328 4329 7314 7492 #taxila_region
 				7361 #kasmira_region
 				4331 4380 4384 4395 #panchanada_region
 				4319 4321 4330 4348 4350 4351 4383 4385 4386 #sivi_region

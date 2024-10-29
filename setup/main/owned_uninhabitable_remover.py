@@ -1,6 +1,6 @@
 import re
 
-non_area_provinces = open("../../map_data/default.map")
+non_area_provinces = open("C:\\Users\\cbona\\OneDrive\\Documents\\Paradox Interactive\\Imperator\\mod\\kill_god\\map_data\\default.map")
 non_area_provinces_data = non_area_provinces.read()
 pattern = "RANGE {(.*)}"
 non_area_ranges = re.findall(pattern, non_area_provinces_data)
@@ -25,10 +25,10 @@ def check_if_province_habitable(province_id):
     else:
         return False
 
-setup_main = open("00_default.txt")
+setup_main = open("C:\\Users\\cbona\\OneDrive\\Documents\\Paradox Interactive\\Imperator\\mod\\kill_god\\setup\\main\\00_default.txt")
 setup_data = setup_main.read()
 province_data = setup_data.partition("country = {")[2].partition("trade = {")[0]
-pattern_provinces = "(?<!deity = )(\d+)"
+pattern_provinces = "(?!deity = )(\d+)"
 all_provinces = re.findall(pattern_provinces, province_data)
 
 printed_provinces = []
@@ -38,4 +38,4 @@ for province in all_provinces:
         print(province)
         printed_provinces.append(province)
 
-input("\n Done. Press return to close")
+print("\n Done. Press return to close")
